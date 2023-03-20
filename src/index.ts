@@ -1,7 +1,7 @@
 const express = require("express");
 const connectDB = require("./database");
 const { PORT } = require("./config");
-const App = require("./expressApp");
+import App from "./expressApp";
 
 const startApp = async () => {
   await connectDB();

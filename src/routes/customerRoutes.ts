@@ -3,7 +3,7 @@ import { CustomerSignUp } from "../controllers/CustomerController";
 
 const router = express.Router();
 
-router.post("/", (req: Request, res: Response) => {
+router.get("/", (req: Request, res: Response) => {
   return res.status(200).send("Hello world");
 });
 router.post("/signup", CustomerSignUp);
