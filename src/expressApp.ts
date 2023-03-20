@@ -6,7 +6,6 @@ export default async (app: Application) => {
   app.use(express.urlencoded({ extended: true }));
 
   app.use(express.json());
-  console.log("aaa");
   app.get("/", (req: Request, res: Response) => {
     return res.status(200).send("home page");
   });
