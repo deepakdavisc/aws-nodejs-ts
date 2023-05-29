@@ -10,6 +10,7 @@ import {
 } from "../utility";
 import { Customer } from "../models";
 
+// Customer Signup
 export const CustomerSignUp = async (
   req: Request,
   res: Response,
@@ -66,6 +67,7 @@ export const CustomerSignUp = async (
   return res.status(200).json({ res: customerInputs });
 };
 
+//Customer Login
 export const CustomerLogin = async (req: Request, res: Response) => {
   const customerInputs = plainToClass(CustomerLoginObj, req.body);
 
