@@ -4,7 +4,7 @@ export class CreateCustomerObj {
   @IsEmail()
   email: string;
 
-  @Length(6, 10)
+  @Length(6, 20)
   password: string;
 
   @MinLength(10)
@@ -15,6 +15,14 @@ export class CreateCustomerObj {
 
   @Length(6, 30)
   lastName: string;
+}
+
+export class CustomerLoginObj {
+  @IsEmail()
+  email: string;
+
+  @Length(6, 20)
+  password: string;
 }
 
 export interface CustomerPayload {

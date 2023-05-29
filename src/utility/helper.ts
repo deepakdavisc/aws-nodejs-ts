@@ -7,10 +7,21 @@ export const GenerateSalt = async () => {
   return await bcrypt.genSalt();
 };
 
+export const ValidatePassword = async (
+  enteredPassword: string,
+  savedPassword: string,
+  salt: string
+) => {
+  return (await GeneratePassword(enteredPassword, salt)) === savedPassword;
+};
+
 export const GeneratePassword = async (password: string, salt: string) => {
   return await bcrypt.hash(password, salt);
 };
 
-export const GenerateSignature = async (payload: CustomerPayload) => {
-  return jwt.sign(payload, APP_SECRET, { expiresIn: "90d" });
+export const GenerateSignature = async (
+  payload: CustomerPayload,
+  duration: string
+) => {
+  return jwt.sign(payload, APP_SECRET, { expiresIn: duration });
 };
